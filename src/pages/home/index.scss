@@ -1,0 +1,40 @@
+.home-container {
+  background-color: var(--main-bg-color);
+  width: 100%;
+  height: 100%;
+}
+
+.phone-container {
+  background-color: var(--main-sub-bg-color);
+  width: 80%;
+  height: 80%;
+  border-radius: 120px;
+  padding: 100px 200px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+$color_list: var(--main-color-list-1), var(--main-color-list-2), var(--main-color-list-3), var(--main-color-list-4), var(--main-color-list-5), var(--main-color-list-6), var(--main-color-list-7), var(--main-color-list-8), var(--main-color-list-9), var(--main-color-list-10);
+
+@mixin bg-color() {
+  $random-color: ceil(random(length($color_list)));
+  background: nth($color_list, $random-color);
+}
+
+.block {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 3rem;
+  // background-color: rgb(201, 242, 242);
+  margin: 0 1rem;
+  @include bg-color();
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  img{
+    width: 50%;
+    // height: 50%;
+  }
+}
